@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maths-app
+  labels:
+    app: maths-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: maths-app
+  template:
+    metadata:
+      labels:
+        app: maths-app
+    spec:
+      containers:
+        - name: maths-app
+          image: dancraftdocker/maths:latest
+          ports:
+            - containerPort: 8000
