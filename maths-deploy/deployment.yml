@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: maths-app
+  name: mathsargocd-app
   labels:
-    app: maths-app
+    app: mathsargocd-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: maths-app
+      app: mathsargocd-app
   template:
     metadata:
       labels:
-        app: maths-app
+        app: mathsargocd-app
     spec:
       containers:
-        - name: maths-app
-          image: dancraftdocker/maths:latest
+        - name: mathsargocd-app
+          image: a-justin/maths-deploy 
           ports:
             - containerPort: 8000
