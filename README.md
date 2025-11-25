@@ -1,12 +1,14 @@
 # Maths Deploy 1
 
 ## Overview
-Maths Deploy 1 is a project designed to [briefly describe the purpose of the project]. It aims to [explain the key features or goals].
+Maths Deploy 1 is best suited for automating the deployment of mathematical or analytics applications using Kubernetes and GitOps principles. It streamlines the local and continuous deployment process, making it ideal for developers or teams seeking a reproducible, easy-to-manage deployment workflow for their containerized applications on Windows via Minikube and Argo CD.
 
 ## Features
-- Feature 1
-- Feature 2
-- Feature 3
+- Rapid local Kubernetes development setup using Minikube.
+- Continuous, declarative deployment via Argo CD.
+- Windows-friendly (optimized for Powershell Terminal usage).
+- Simple integration with Git-based workflows.
+- Easily adaptable for mathematical or analytical workloads.
 
 ## Installation
 To get started with this project, follow the installation instructions below:
@@ -74,4 +76,4 @@ We welcome contributions to this project. Please follow the guidelines below:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Author
-[Your Name]
+Austin
