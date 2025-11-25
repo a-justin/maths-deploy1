@@ -23,11 +23,43 @@ npm install
 ```
 
 ## Usage
-To run the project, use the following command:
+To run the project locally, use the following command:
 
 ```bash
 npm start
 ```
+
+## Deployment
+This project was deployed using the following stack:
+
+- **Kubernetes (Minikube)**: Local Kubernetes environment for easy testing
+- **Argo CD**: Declarative, GitOps continuous delivery for Kubernetes
+- **Powershell Terminal**: Used for running Minikube and Argo CD commands on Windows
+
+### Steps to Deploy with Minikube and Argo CD
+
+1. **Start Minikube:**
+    ```powershell
+    minikube start
+    ```
+2. **Enable Ingress (optional):**
+    ```powershell
+    minikube addons enable ingress
+    ```
+3. **Install Argo CD:**
+    ```powershell
+    kubectl create namespace argocd
+    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+    ```
+4. **Expose Argo CD UI:**
+    ```powershell
+    kubectl port-forward svc/argocd-server -n argocd 8080:443
+    ```
+5. **Login to Argo CD:**
+    Visit http://localhost:8080 and log in (default username: admin, password from `kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d`)
+6. **Connect your repository and deploy your app via Argo CD UI or CLI.**
+
+You can refer to Argo CD and Minikube documentation for troubleshooting and advanced scenarios.
 
 ## Contributing
 We welcome contributions to this project. Please follow the guidelines below:
